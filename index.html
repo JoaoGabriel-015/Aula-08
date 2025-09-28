@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento de Alunos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gerenciamento de Alunos</h1>
+    </header>
+
+    <main>
+        <section id="cadastro">
+            <h2>Cadastrar Novo Aluno</h2>
+            <form id="form-cadastro">
+                <div class="form-group">
+                    <label for="nome">Nome do Aluno:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="turma">Turma:</label>
+                    <input type="text" id="turma" name="turma" required>
+                </div>
+                <div class="form-group">
+                    <label for="matricula">Matrícula:</label>
+                    <input type="text" id="matricula" name="matricula" required>
+                </div>
+                <button type="submit" class="btn-primary">Cadastrar</button>
+                <p id="msg-cadastro" class="mensagem"></p>
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="consultas">
+            <h2>Consultas</h2>
+            
+            <div class="filtro-turma">
+                <label for="filtro-turma">Filtrar por Turma:</label>
+                <select id="filtro-turma">
+                    <option value="">Todas as Turmas</option>
+                </select>
+            </div>
+
+            <button id="btn-consultar-todos" class="btn-secondary">Consultar Todos os Alunos</button>
+            
+            <div class="busca-aluno">
+                <input type="text" id="busca-nome" placeholder="Buscar aluno pelo nome">
+                <button id="btn-buscar-aluno" class="btn-secondary">Buscar por Nome</button>
+            </div>
+            
+            <p id="msg-consulta" class="mensagem"></p>
+        </section>
+
+        <hr>
+
+        <section id="tabela-alunos">
+            <h2>Lista de Alunos</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Turma</th>
+                            <th>Matrícula</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-alunos">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sistema de Gerenciamento de Alunos</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
