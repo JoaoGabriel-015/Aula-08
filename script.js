@@ -1,7 +1,7 @@
-// A URL DA SUA API REAL deve ser definida aqui:
+
 const API_BASE_URL = 'https://api-alunos.exemplo.com/alunos';
 
-// --- SIMULAÇÃO DE API (Mantenha se não tiver API real) ---
+
 let alunosData = [
     { id: 1, nome: "Ana Silva", turma: "TADS-2023", matricula: "2023001" },
     { id: 2, nome: "Bruno Costa", turma: "TADS-2024", matricula: "2024005" },
@@ -57,12 +57,7 @@ const mockFetchPorNome = async (nome) => new Promise(resolve => {
         });
     }, 300);
 });
-// --- FIM DA SIMULAÇÃO DE API ---
 
-
-// -----------------------------------------------------
-// FUNÇÕES DE LÓGICA PRINCIPAL
-// -----------------------------------------------------
 
 const listaAlunosEl = document.getElementById('lista-alunos');
 const formCadastro = document.getElementById('form-cadastro');
@@ -128,13 +123,11 @@ function popularFiltroTurma(alunos) {
 }
 
 
-// -----------------------------------------------------
-// REQUISIÇÕES À API (usando mock ou fetch real)
-// -----------------------------------------------------
+
 
 async function consultarTodosAlunos(turma = null) {
     try {
-        // Se for usar a API real, substitua 'mockFetchAlunos()' pelo 'fetch(API_BASE_URL)'
+        
         const response = await mockFetchAlunos(); 
 
         if (!response.ok) {
@@ -166,7 +159,7 @@ async function consultarAlunoPorNome() {
     }
 
     try {
-        // Se for usar a API real, substitua 'mockFetchPorNome(nome)' pelo fetch real
+        
         const response = await mockFetchPorNome(nome); 
 
         if (!response.ok) {
@@ -183,7 +176,7 @@ async function consultarAlunoPorNome() {
 
 async function cadastrarNovoAluno(alunoData) {
     try {
-        // Se for usar a API real, substitua 'mockFetchCadastrar(alunoData)' pelo fetch real (POST)
+        
         const response = await mockFetchCadastrar(alunoData);
         
         if (!response.ok) {
@@ -203,7 +196,7 @@ async function cadastrarNovoAluno(alunoData) {
 
 async function deletarAluno(id) {
     try {
-        // Se for usar a API real, substitua 'mockFetchDeletar(id)' pelo fetch real (DELETE)
+        
         const response = await mockFetchDeletar(id);
         
         if (!response.ok) {
@@ -219,9 +212,7 @@ async function deletarAluno(id) {
 }
 
 
-// -----------------------------------------------------
-// EVENT LISTENERS
-// -----------------------------------------------------
+
 
 formCadastro.addEventListener('submit', (event) => {
     event.preventDefault();
